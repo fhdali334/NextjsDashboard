@@ -10,6 +10,9 @@ import {
 } from './definitions';
 import { formatCurrency } from './utils';
 
+
+// REVENUE DATA
+
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
@@ -32,6 +35,11 @@ export async function fetchRevenue() {
   }
 }
 
+
+// INVOICES DATA
+
+
+
 export async function fetchLatestInvoices() {
   try {
     const data = await sql<LatestInvoiceRaw>`
@@ -51,6 +59,10 @@ export async function fetchLatestInvoices() {
     throw new Error('Failed to fetch the latest invoices.');
   }
 }
+
+
+// CARD DATA
+
 
 export async function fetchCardData() {
   try {
